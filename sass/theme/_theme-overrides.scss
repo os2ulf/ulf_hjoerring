@@ -1,0 +1,68 @@
+/**
+ * Overrides
+ *
+ * Theme specific overrides
+ *
+ */
+
+/* Default file: base/_base.scss
+================================================================================================================== */
+body {
+  background: $coral;
+  color: #333;
+}
+
+
+a {
+  &:link {
+    color: $link-color;
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: darken($link-color, 5%);
+  }
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: darken($link-color, 10%);
+  }
+}
+
+
+/* Default file: modules/_footer.scss
+================================================================================================================== */
+
+.footer {
+  background: $footer-color;
+  color: $white;
+
+  // Content elements in footer is editable by editors. We set some defaults.
+  hr {
+    border-color: $white;
+  }
+
+  a {
+    @include strip-link-styles($white, underline);
+  }
+}
+
+/* Default file: modules/_header.scss
+================================================================================================================== */
+
+.header {
+  background: $coral;
+  height: 85px;
+
+  @include breakpoint(45em) {
+    height: 160px;
+  }
+
+  &--toggle-mobile-nav {
+    background: none;
+  }
+}
