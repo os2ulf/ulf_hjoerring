@@ -102,27 +102,17 @@ a {
 
   /* Display of node title. */
   &--title {
-    @include background-set-color('default', 0.7);
+    @include background-set-color('blue', 0.7);
     border-color: $dark-blue;
-
-    &.is-dagtilbud {
-      border-color: $daycare-color;
-    }
-
-    &.is-grundskole {
-      border-color: $school-color;
-    }
-
-    &.is-ungdomsuddannelse {
-      border-color: $youth-color;
-    }
-
-    &.is-course {
-      border-color: $course-color;
-    }
 
     &.is-profile {
       border-color: $link-color;
+    }
+    &.is-internship {
+      border-color: $blue;
+    }
+    &.is-education {
+      border-color: $blue;
     }
   }
 

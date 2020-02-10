@@ -1,0 +1,57 @@
+/**
+ *
+ * Teaser module.
+ *
+ * Display of list items (Ie. Frontpage and search results.)
+ *
+ */
+
+/* Styles.
+================================================================================================================== */
+
+/* Teaser representing a target group. */
+.teaser--group {
+
+  &.is-internship,
+  &.is-education {
+    @include breakpoint(650px) {
+      width: 50%;
+    }
+  }
+
+  &-inner {
+    // Change text background transparency when hovering on the teaser.
+    // State class names are fetched from taxonomy terms, thus Danish ...
+    &:hover .teaser--group-text {
+
+      &.is-internship {
+        @include background-set-color('blue', 1);
+      }
+      &.is-education {
+        @include background-set-color('blue', 1);
+      }
+    }
+  }
+
+  &-text {
+
+    &.is-internship {
+      @include background-set-color('blue', 0.7);
+    }
+    &.is-education {
+      @include background-set-color('blue', 0.7);
+    }
+
+  }
+  .is-internship {
+    .ribbon {
+      @include background-set-color('blue', 1);
+    }
+  }
+  .is-education {
+    .ribbon {
+      @include background-set-color('blue', 1);
+    }
+  }
+
+}
