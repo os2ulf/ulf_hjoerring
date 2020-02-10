@@ -56,13 +56,78 @@ a {
 
 .header {
   background: $coral;
-  height: 85px;
+  &--logo {
+    max-width: 8em;
+  }
+}
 
-  @include breakpoint(45em) {
-    height: 160px;
+
+/* Default file: modules/_block.scss
+================================================================================================================== */
+
+.block--dark {
+  background: $block-dark;
+  color: $white;
+
+  a {
+    @include strip-link-styles($white, underline);
+  }
+}
+
+.block--light {
+  background: $block-light;
+
+  a {
+    @include strip-link-styles($link-color, underline);
+  }
+}
+
+.block--pdf {
+  &-link {
+    @extend %button;
+
+    @include strip-link-styles($white);
+  }
+}
+
+.block--newsletter.is-front .form-type-emailfield {
+  & > input {
+    margin-bottom: $boxlist-padding;
+  }
+}
+
+/* Default file: modules/_field.scss
+================================================================================================================== */
+.field {
+
+  /* Display of node title. */
+  &--title {
+    @include background-set-color('default', 0.7);
+    border-color: $dark-blue;
+
+    &.is-dagtilbud {
+      border-color: $daycare-color;
+    }
+
+    &.is-grundskole {
+      border-color: $school-color;
+    }
+
+    &.is-ungdomsuddannelse {
+      border-color: $youth-color;
+    }
+
+    &.is-course {
+      border-color: $course-color;
+    }
+
+    &.is-profile {
+      border-color: $link-color;
+    }
   }
 
-  &--toggle-mobile-nav {
-    background: none;
+  &--collection-label {
+    color: $white;
+    background: $link-color;
   }
 }

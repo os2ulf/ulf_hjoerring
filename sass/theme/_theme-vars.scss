@@ -29,8 +29,9 @@ $gray-darkest:     lighten($black, 30%);
 
 $coral:            #f1564d;
 $blue:             #5d97d1;
-$light-blue:       #deeced;  // Block bg color.
-$dark-blue:        #17858c;  // Block bg color.
+$light-blue:       #cae1f7;  // Block bg color.
+$dark-blue:        #2c649c;  // Block bg color.
+$dark-blue:        $blue;  // Block bg color.
 $green:            rgb(164, 218, 32);  // Daycare color.
 $purple:           rgb(144, 29, 124); // School color.
 $orange:           rgb(255, 104, 0);  // Youth color.
@@ -41,7 +42,7 @@ $school-color:     $blue;
 $youth-color:      $blue;
 $block-color:      $blue;
 $course-color:     $blue;
-$block-light:      $blue;
+$block-light:      $light-blue;
 $block-dark:       $blue;
 $your-region:      $blue;
 /*
