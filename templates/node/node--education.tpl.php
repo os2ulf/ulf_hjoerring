@@ -87,26 +87,26 @@
           <?php print $submitted; ?>
         </div>
       <?php endif; ?>
-      <div class="content is-<?php print $group_type; ?>">
+      <div class="content is-education">
         <div class="content--image">
 
           <?php if (isset($ribbon_message)) : ?>
             <div class="ribbon-wrapper left is-content">
               <div class="ribbon is-content">
-                <div class="ribbon--course is-content"><?php print $ribbon_message; ?></div>
+                <div class="ribbon--education is-content"><?php print $ribbon_message; ?></div>
               </div>
             </div>
           <?php else: ?>
             <?php if (isset($field_free['0']) && $field_free['0']['value'] == 1) : ?>
               <div class="ribbon-wrapper left is-content">
                 <div class="ribbon is-content">
-                  <div class="ribbon--course is-content"><?php print t('Free'); ?></div>
+                  <div class="ribbon--education is-content"><?php print t('Free'); ?></div>
                 </div>
               </div>
             <?php endif;?>
           <?php endif;?>
 
-          <h1 class="field--title is-<?php print $group_type; ?>"><?php print render($title); ?></h1>
+          <h1 class="field--title is-education"><?php print render($title); ?></h1>
           <?php print render($content['field_image']); ?>
         </div>
         <div class="content--main">
@@ -178,7 +178,7 @@
             </div>
           <?php endif;?>
 
-          <?php if (isset($content['field_pretix_date'])): ?>
+          <?php if ($field_pretix_date): ?>
             <?php print render($content['field_pretix_date']); ?>
           <?php endif; ?>
 
@@ -248,16 +248,11 @@
                 </div>
               <?php endif;?>
               <?php /* If any of the fields in this wrapper contain data */ ?>
-              <?php if ($field_subject) : ?>
-                <div class="block--field-wrapper">
-                  <?php print render($content['field_subject']); ?>
-                </div>
-              <?php endif;?>
-              <?php if ($field_educational_goals || $field_subjects_primary_school || $field_subjects_youth) : ?>
+              <?php if ($field_educational_goals || $field_subjects_primary_school || $field_competencies) : ?>
                 <div class="block--field-wrapper">
                   <?php print render($content['field_educational_goals']); ?>
                   <?php print render($content['field_subjects_primary_school']); ?>
-                  <?php print render($content['field_subjects_youth']); ?>
+                  <?php print render($content['field_competencies']); ?>
                 </div>
               <?php endif; ?>
               <?php if ($field_facilities || $field_facilities_info) : ?>
@@ -351,7 +346,7 @@
       hide($content['field_collection_price']);
       hide($content['field_free']);
       hide($content['field_period_full_year']);
-      hide($content['field_target_group']);
+      hide($content['field_pretix_date']);
       hide($content['comments']);
       hide($content['links']); ?>
       <div style=""><?php print render($content); ?></div>

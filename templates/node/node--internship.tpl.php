@@ -87,26 +87,26 @@
           <?php print $submitted; ?>
         </div>
       <?php endif; ?>
-      <div class="content is-<?php print $group_type; ?>">
+      <div class="content is-internship">
         <div class="content--image">
 
           <?php if (isset($ribbon_message)) : ?>
             <div class="ribbon-wrapper left is-content">
               <div class="ribbon is-content">
-                <div class="ribbon--course is-content"><?php print $ribbon_message; ?></div>
+                <div class="ribbon--internship is-content"><?php print $ribbon_message; ?></div>
               </div>
             </div>
           <?php else: ?>
             <?php if (isset($field_free['0']) && $field_free['0']['value'] == 1) : ?>
               <div class="ribbon-wrapper left is-content">
                 <div class="ribbon is-content">
-                  <div class="ribbon--course is-content"><?php print t('Free'); ?></div>
+                  <div class="ribbon--internship is-content"><?php print t('Free'); ?></div>
                 </div>
               </div>
             <?php endif;?>
           <?php endif;?>
 
-          <h1 class="field--title is-<?php print $group_type; ?>"><?php print render($title); ?></h1>
+          <h1 class="field--title is-internship"><?php print render($title); ?></h1>
           <?php print render($content['field_image']); ?>
         </div>
         <div class="content--main">
@@ -178,7 +178,7 @@
             </div>
           <?php endif;?>
 
-          <?php if (isset($content['field_pretix_date'])): ?>
+          <?php if ($field_pretix_date): ?>
             <?php print render($content['field_pretix_date']); ?>
           <?php endif; ?>
 
@@ -210,7 +210,7 @@
               <?php /* If any of the fields in this wrapper contain data */ ?>
               <?php print render($content['field_count']); ?>
               <?php print render($content['field_count_description']); ?>
-              <?php if ($field_duration || $field_collection_price || (isset($field_free['0']) && $field_free['0']['value'] == 1) || $field_price_description || $field_duration_description || $field_period_info ) : ?>
+              <?php if ($field_duration || $field_collection_price || (isset($field_free['0']) && $field_free['0']['value'] == 1) || $field_price_description || $field_duration_description ) : ?>
                 <div class="block--field-wrapper">
                   <?php if ($field_duration || $field_duration_description) : ?>
                     <div class="block--field-label"><?php print t('Duration');?></div>
@@ -234,11 +234,9 @@
                 </div>
               <?php endif;?>
               <?php /* If any of the fields in this wrapper contain data */ ?>
-              <?php if ($field_educational_goals || $field_subjects_primary_school || $field_subjects_youth) : ?>
+              <?php if ($field_educational_goals) : ?>
                 <div class="block--field-wrapper">
                   <?php print render($content['field_educational_goals']); ?>
-                  <?php print render($content['field_subjects_primary_school']); ?>
-                  <?php print render($content['field_subjects_youth']); ?>
                 </div>
               <?php endif; ?>
               <?php if ($field_facilities || $field_facilities_info) : ?>
@@ -249,35 +247,6 @@
               <?php endif; ?>
             </div>
           </div>
-          <?php if (module_exists('transportpulje_form') && $group_type != 'ungdomsuddannelse') : ?>
-            <?php if (!empty($field_tpf_exclude)) : ?>
-              <?php if ($field_tpf_exclude[LANGUAGE_NONE]['0']['value'] != 1) : ?>
-                <div class="block--dark block--transport-request-link">
-                  <h2 class="block--header">
-                    <?php print t('Transport');?>
-                  </h2>
-                  <div class="block--content">
-                    <div class="block--field-text"><?php print t('Create an application to request funding from the transport pool to attend this course'); ?></div>
-                    <p>
-                      <a target="_blank" href="/transport_application?course_id=<?php print $nid; ?>"><?php print t('Create transport application'); ?></a>
-                    </p>
-                  </div>
-                </div>
-              <?php endif; ?>
-            <?php else : ?>
-              <div class="block--dark block--transport-request-link">
-                <h2 class="block--header">
-                  <?php print t('Transport');?>
-                </h2>
-                <div class="block--content">
-                  <div class="block--field-text"><?php print t('Create an application to request funding from the transport pool to attend this course'); ?></div>
-                  <p>
-                    <a target="_blank" href="/transport_application?course_id=<?php print $nid; ?>"><?php print t('Create transport application'); ?></a>
-                  </p>
-                </div>
-              </div>
-            <?php endif; ?>
-          <?php endif; ?>
           <div class="block--dark">
             <h2 class="block--header">
               <?php print t('Contact organizer');?>
@@ -324,15 +293,11 @@
       </div>
       <?php
       // We hide the comments and links now so that we can render them later.
-      hide($content['field_registration_form']);
-      hide($content['field_target_group_sub']);
       hide($content['field_duration']);
       hide($content['field_duration_unit']);
-      hide($content['field_period']);
       hide($content['field_collection_price']);
       hide($content['field_free']);
-      hide($content['field_period_full_year']);
-      hide($content['field_target_group']);
+      hide($content['field_pretix_date']);
       hide($content['comments']);
       hide($content['links']); ?>
       <div style=""><?php print render($content); ?></div>

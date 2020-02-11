@@ -55,3 +55,28 @@
   }
 
 }
+
+.ribbon .ribbon--internship,
+.ribbon .ribbon--education {
+    @include background-set-color('blue', 1);
+  /* Set the text properties */
+  color: $white;
+  text-decoration: none;
+  text-align: center;
+
+  width: 200px;
+  line-height: 20px;
+
+  display: inline-block;
+  padding: 2px 0;
+
+  border-width: 1px 0;
+  border-style: dotted;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+
+  &.is-content {
+    line-height: 32px;
+    width: 300px;
+  }
+}

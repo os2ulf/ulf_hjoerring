@@ -75,7 +75,8 @@ a {
 }
 
 .block--light {
-  background: $block-light;
+  //background: $block-light;
+  @include background-set-color('blue', 0.3);
 
   a {
     @include strip-link-styles($link-color, underline);
@@ -102,7 +103,7 @@ a {
 
   /* Display of node title. */
   &--title {
-    @include background-set-color('blue', 0.7);
+    @include background-set-color('white', 0.7);
     border-color: $dark-blue;
 
     &.is-profile {
