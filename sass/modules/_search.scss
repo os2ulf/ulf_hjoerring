@@ -12,9 +12,28 @@
 
 .search {
 
+  &--filter-wrapper--wide {
+    width: 100%;
+    padding-bottom: 2px;
+    .search--filter-search-text[type="text"] {
+      @include breakpoint(650px) {
+        max-width: 86%;
+      }
+    }
+  }
   // Widget display.
   &--widget {
     background: $blue;
+
+    &.is-users,
+    &.is-users .search--filter-dropdown,
+    &.is-users .search--filter-wrapper-user,
+    &.is-users .search--filter-dropdown-submit,
+    &.is-users .search--widget-selected,
+    &.is-users .search--filter-search-submit {
+      @include background-set-color('blue', 1);
+      border-color: $blue;
+    }
 
     &.is-internship,
     &.is-internship .search--filter-dropdown,
@@ -34,9 +53,28 @@
 
       border-color: $blue;
     }
+
+    .hidden {
+      display: none;
+    }
+    .visible-md {
+      display: none;
+      @include breakpoint(650px) {
+        display: block;
+      }
+      @include breakpoint(1000px) {
+        display: none;
+      }
+    }
+    .visible-lg {
+      display: none;
+      @include breakpoint(1000px) {
+        display: block;
+      }
+    }
   }
   &--reset {
-    color: $white;
+    //color: $white;
   }
 
   &-results {

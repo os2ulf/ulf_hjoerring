@@ -1,8 +1,8 @@
-<div class="search--widget is-education">
+<div class="search--widget is-users">
   <div class="search--widget-inner">
 
     <!-- Search field -->
-    <div class="search--filter-wrapper">
+    <div class="search--filter-wrapper--wide">
       <div class="search--filter-wrapper-inner">
         <div class="search--filter-text">
           <input type="text" id="search" name="search" value="" size="60"
@@ -15,6 +15,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="search--widget-inner">
 
     <!-- Interval search fields -->
     <div class="search--filter-wrapper" data-ng-repeat="interval in intervals">
@@ -88,41 +90,35 @@
       </div>
     </div>
 
-    <div class="search--filter-wrapper visible-lg">
+    <div class="search--filter-wrapper visible-md">
       <div class="search--filter-wrapper-inner">
         <div class="search--filter-list">
           <!-- this is just a spacer -->
         </div>
       </div>
     </div>
-    <div class="search--filter-wrapper visible-lg">
-      <div class="search--filter-wrapper-inner">
-        <div class="search--filter-list">
-          <!-- this is just a spacer -->
-        </div>
-      </div>
-    </div>
-
-    <!-- Boolean filters -->
-    <div class="search--widget-extras" data-ng-repeat="(id, field) in filters.boolean">
-      <input class="search--widget-free" id="{{ id }}" data-ng-disabled="!field.count" type="checkbox" data-ng-model="query.filters['boolean'][id]" data-ng-click="searchClicked()">
-      <label data-ng-class="{ disabled: !field.count }" for="{{ key }}">{{ field.name }}</label>
-      <div class="search--reset" data-ng-click="reset()">Nulstil søgning</div>
-    </div>
-
-
-    <!-- Selected filters -->
-    <div class="search--widget-selected">
-      <div class="search--widget-selected-inner">
-        <span data-ng-repeat="(field, filters) in selectedFilters" class="search--widget-selected-item-wrapper">
-          <span class="search--widget-selected-item"
-                data-ng-repeat="filter in filters"
-                data-ng-click="removeFilter(field, filter)">{{ filter }}
-          </span>
-        </span>
-      </div>
-    </div>
-
 
   </div>
+
+
+  <!-- Boolean filters -->
+  <div class="search--widget-extras" data-ng-repeat="(id, field) in filters.boolean">
+    <input class="search--widget-free-test" id="{{ id }}" data-ng-disabled="!field.count" type="checkbox" data-ng-model="query.filters['boolean'][id]" data-ng-click="searchClicked()">
+    <label data-ng-class="{ disabled: !field.count }" for="{{ key }}">{{ field.name }}</label>
+  </div>
+
+  <!-- Selected filters -->
+  <div class="search--widget-selected">
+    <div class="search--widget-selected-inner">
+      <span data-ng-repeat="(field, filters) in selectedFilters" class="search--widget-selected-item-wrapper">
+        <span class="search--widget-selected-item"
+             data-ng-repeat="filter in filters"
+             data-ng-click="removeFilter(field, filter)">{{ filter }}
+        </span>
+      </span>
+    </div>
+    <div class="search--reset is-moved" data-ng-click="reset()">Nulstil søgning</div>
+  </div>
+
 </div>
+
