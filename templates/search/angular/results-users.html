@@ -22,22 +22,23 @@
 
 <!-- Normal result display -->
 <span data-ng-if="!displayMap">
-  <div class="search-results">
-    <article class="search-results--result is-users" data-ng-repeat="hit in hits.results">
-      <div class="ribbon-wrapper left {{ hit.ribbon_class_names }}" data-ng-if="hit.ribbon_message">
-        <div class="ribbon">
-          <a href="{{ hit.url }}">{{ hit.ribbon_message }}</a>
-        </div>
-      </div>
-      <header>
-        <h2 class="search-results--header">
-          <a href="{{ hit.url }}">{{ hit.field_profile_name }}</a>
-        </h2>
-        <p data-ng-bind-html="hit['field_profile_description:value'] | trimWordBoundary:110"></p>
-        <p class="teaser--type-read-more"><a href="{{ hit.url }}">Se hele profilen</a></p>
-      </header>
-      <figure><a href="{{ hit.url }}"><img data-ng-src="{{ hit['field_image:file'].url }}" src="#"/></a></figure>
-    </article>
+  <div class="search-results--companies">
+
+
+    <div data-ng-repeat="(char, charhits) in alphabet">
+      <h1>{{ char }}</h1>
+      <article class="search-results--result is-company" data-ng-repeat="hit in charhits">
+        <header>
+          <h2 class="search-results--header">
+            <a href="{{ hit.url }}">{{ hit.field_profile_name }}</a>
+          </h2>
+          <p class="teaser--type-read-more"><a href="{{ hit.url }}">Se hele profilen</a></p>
+        </header>
+        <figure><a href="{{ hit.url }}"><img data-ng-src="{{ hit['field_image:file'].url }}" src="#"/></a></figure>
+      </article>
+    </div>
+
+
 
     <!-- No results -->
     <div class="no-results" data-ng-if="!hits.hits && !searching">

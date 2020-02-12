@@ -294,7 +294,7 @@
           <?php endif; ?>
           <div class="block--dark">
             <h2 class="block--header">
-              <?php print t('Contact organizer');?>
+              <?php print t('Contact provider');?>
             </h2>
             <div class="block--content">
               <div class="block--field-label"><?php print $profile_name; ?></div>
