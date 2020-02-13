@@ -61,9 +61,11 @@ $your-region:      rgb(125,170,193);// #8E72B2
 
 /* Typography
    ================================================================================================================== */
-
-$font:             14px/1.3 "Muli", sans-serif;
-
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+$header-font: "Muli", sans-serif;
+$body-font: 'Lato', sans-serif;
+$font: $body-font;
 
 /* Link colors
    ================================================================================================================== */
