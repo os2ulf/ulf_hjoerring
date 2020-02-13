@@ -6,58 +6,23 @@
  */
 
 
-
-/* Layout
-   ================================================================================================================== */
-
-$layout-max-width:    1000px;
-$node-breakpoint:     55em; //@todo px
-
 /* Colors
    ================================================================================================================== */
 $white:            #fff;
 $black:            #000;
 
-$white-off:        lighten($black, 95%);
-$gray-lightest:    lighten($black, 90%);
-$gray-lighter:     lighten($black, 85%);
-$gray-light:       lighten($black, 70%);
-$gray:             lighten($black, 60%);
-$gray-dark:        lighten($black, 50%);
-$gray-darker:      lighten($black, 40%);
-$gray-darkest:     lighten($black, 30%);
+$gray:             lighten($black, 20%);
 
 $coral:            #f1564d;
 $blue:             #5d97d1;
-$light-blue:       #cae1f7;  // Block bg color.
-$dark-blue:        #2c649c;  // Block bg color.
-$dark-blue:        $blue;  // Block bg color.
-$green:            rgb(164, 218, 32);  // Daycare color.
-$purple:           rgb(144, 29, 124); // School color.
-$orange:           rgb(255, 104, 0);  // Youth color.
-$yellow:           rgb(237, 215, 28); // Course color.
+$light-blue:       #cae1f7;
+$dark-blue:        #2c649c;
 $footer-color:     $coral;
-$daycare-color:    $blue;
-$school-color:     $blue;
-$youth-color:      $blue;
-$block-color:      $blue;
-$course-color:     $blue;
-$block-light:      $light-blue;
 $block-dark:       $blue;
-$your-region:      $blue;
-/*
-from ulf_esbjerg:
-$dark-blue:        rgb(0,64,105); // #004069
-$daycare-color:    rgb(106,167,68);  // #6AA744
-$school-color:     rgb(232,119,36);// #8E72B2
-$youth-color:      rgb(232,119,36);  // #E87724
-$block-color:      $gray-lightest;
-$course-color:     rgb(255,255,255);  // #ffcb05
-$footer-color:     $dark-blue;
-$block-light:      rgb(239, 240,240);
-$block-dark:       $dark-blue;
-$your-region:      rgb(125,170,193);// #8E72B2
-*/
+$block-light:      $light-blue;
+$link-color:       $blue;
+$link-color-hover: darken($link-color, 10%);
+
 
 /* Typography
    ================================================================================================================== */
@@ -67,28 +32,9 @@ $header-font: "Muli", sans-serif;
 $body-font: 'Lato', sans-serif;
 $font: $body-font;
 
-/* Link colors
-   ================================================================================================================== */
-
-$link-color:       $dark-blue;
-$link-color-hover: darken($link-color, 10%);
-
-
-/* Spacing
-   ================================================================================================================== */
-
-$spacing:          16px;
-
-
-/* Border radius
-   ================================================================================================================== */
-
-$border-radius:    5px;
-
 
 /* Boxlist
    ================================================================================================================== */
-
-$boxlist-font-color:    #000;
-$boxlist-border-color:  $green;
+$boxlist-font-color:    $gray;
+$boxlist-border-color:  $blue;
 $boxlist-padding:       1em;

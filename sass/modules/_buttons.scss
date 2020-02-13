@@ -29,9 +29,13 @@
 
   //@include text-shadow(.025em .025em .1em darken($dark-blue, 10%));
 
+  &:link,
+  &:visited,
   &:focus,
   &:hover,
   &:active {
+    background-color: $dark-blue;
+    border: 1px solid $dark-blue;
     text-decoration: none;
   }
 }
@@ -49,7 +53,6 @@
   color: $white;
 
   @include strip-link-styles($white);
-  //@include text-shadow(.025em .025em .1em darken($dark-blue, 10%));
 
   &:hover {
     background-color: $dark-blue;
@@ -60,6 +63,4 @@
     text-decoration: none;
   }
 
-
-  //@include border-radius($border-radius);
 }

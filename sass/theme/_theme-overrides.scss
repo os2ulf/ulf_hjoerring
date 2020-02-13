@@ -9,7 +9,7 @@
 ================================================================================================================== */
 body {
   background: $coral;
-  color: #333;
+  color: $gray;
 }
 
 
@@ -84,7 +84,6 @@ body {
 }
 
 .block--light {
-  //background: $block-light;
   @include background-set-color('blue', 0.3);
 
   a {
@@ -95,8 +94,6 @@ body {
 .block--pdf {
   &-link {
     @extend %button;
-
-    @include strip-link-styles($white);
   }
 }
 

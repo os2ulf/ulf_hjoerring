@@ -21,42 +21,30 @@
       }
     }
   }
-  // Widget display.
+
   &--widget {
-    background: $blue;
 
+    .search--filter-dropdown-header {
+      padding: 20px 0 16px;
+    }
+
+    &,
     &.is-users,
-    &.is-users .search--filter-dropdown,
-    &.is-users .search--filter-wrapper-user,
-    &.is-users .search--filter-dropdown-submit,
-    &.is-users .search--widget-selected,
-    &.is-users .search--filter-search-submit {
-      @include background-set-color('blue', 1);
-      border-color: $blue;
-    }
-
     &.is-internship,
-    &.is-internship .search--filter-dropdown,
-    &.is-internship .search--filter-dropdown-submit,
-    &.is-internship .search--widget-selected,
-    &.is-internship .search--filter-search-submit {
-      @include background-set-color('blue', 1);
-
-      border-color: $blue;
-    }
     &.is-education,
-    &.is-education .search--filter-dropdown,
-    &.is-education .search--filter-dropdown-submit,
-    &.is-education .search--widget-selected,
-    &.is-education .search--filter-search-submit {
+    .search--filter-dropdown,
+    .search--filter-wrapper-user,
+    .search--filter-dropdown-submit,
+    .search--widget-selected,
+    .search--filter-search-submit {
       @include background-set-color('blue', 1);
-
       border-color: $blue;
     }
 
     .hidden {
       display: none;
     }
+
     .visible-md {
       display: none;
       @include breakpoint(650px) {
@@ -73,25 +61,10 @@
       }
     }
   }
-  &--reset {
-    //color: $white;
-  }
 
   &-results {
     &--result {
-      &.is-internship {
-        border-bottom: 6px solid $blue;
-        .ribbon {
-          @include background-set-color('blue', 1);
-
-          a,
-          a:hover {
-            /* Set the text properties */
-            color: $white;
-            text-decoration: none;
-          }
-        }
-      }
+      &.is-internship,
       &.is-education {
         border-bottom: 6px solid $blue;
         .ribbon {
@@ -99,7 +72,6 @@
 
           a,
           a:hover {
-            /* Set the text properties */
             color: $white;
             text-decoration: none;
           }
