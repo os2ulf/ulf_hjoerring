@@ -63,7 +63,7 @@
     <!-- Search filters -->
     <div id={{id}} data-ng-class="toggleFilterClasses[id][0]"
          class="search--filter-wrapper"
-         data-ng-repeat="id in ['field_subjects_primary_school', 'field_competencies', 'field_target_group_sub', 'author:field_branche']">
+         data-ng-repeat="id in ['author:field_branche', 'field_target_group_sub', 'field_subjects_primary_school', 'field_competencies']">
       <div class="search--filter-wrapper-inner">
         <div class="search--filter-list">
           <div class="search--filter-label" data-ng-click="openFilter(id)">{{ filters.taxonomy[id].name }}</div>
@@ -73,7 +73,7 @@
               <div class="search--filter-dropdown-header" data-ng-click="openFilter(id)">{{ filters.taxonomy[id].name }} <span class="search--filter-dropdown-header-close"><img src="/profiles/ulf/themes/ulf_default/images/close.svg"></span>
               </div>
               <div class="search--filter-dropdown-content">
-                <div data-ng-repeat="(key, item) in filters.taxonomy[id].items">
+                <div data-ng-repeat="(key, item) in filters.taxonomy[id].items" data-ng-class="{ disabled: !item.count }">
                   <input id="{{ key }}" data-ng-disabled="!item.count"
                          data-ng-click="searchClicked()" type="checkbox"
                          data-ng-model="query.filters.taxonomy[id][key]">

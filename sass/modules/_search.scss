@@ -60,6 +60,12 @@
         display: block;
       }
     }
+
+    #field_competencies {
+      .disabled {
+        display: none;
+      }
+    }
   }
 
   &-results {
