@@ -101,15 +101,15 @@
               </div>
               <div class="search--filter-dropdown-content">
                 <div class="search--filter-dropdown-content--query">
-                  <input id="competencies--query-string" placeholder="Filtrér liste" type="text">
+                  <input id="competencies--query-string" placeholder="Filtrér liste" type="text" data-ng-model="filterCompetencies">
                 </div>
-                <div data-ng-repeat="(key, item) in filters.taxonomy[id].items" data-ng-class="{ disabled: !item.count }">
-                  <input id="{{ key }}" data-ng-disabled="!item.count"
-                         data-ng-click="searchClicked()" type="checkbox"
-                         data-ng-model="query.filters.taxonomy[id][key]">
-                  <label data-ng-class="{ disabled: !item.count }"
-                         for="{{ key }}">{{ item.value }}</label>
+                <br>
+                <div data-ng-repeat="item in competenciesItems = (filters.taxonomy[id].items | toArray | filter: greaterThan('count', 0) | filter: { value: filterCompetencies })">
+                  <input id="{{ item.value }}" data-ng-click="searchClicked()" type="checkbox"
+                         data-ng-model="query.filters.taxonomy[id][item.value]">
+                  <label for="{{ item.value }}">{{ item.value }}</label>
                 </div>
+                <p ng-hide="competenciesItems.length">Ingen resultater</p>
               </div>
               <div class="search--filter-dropdown-submit" data-ng-click="openFilter(id)">Anvend</div>
             </div>
