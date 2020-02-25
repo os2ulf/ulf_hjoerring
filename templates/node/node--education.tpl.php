@@ -90,20 +90,12 @@
       <div class="content is-education">
         <div class="content--image">
 
-          <?php if (isset($ribbon_message)) : ?>
+          <?php if (isset($garantipartner) && $garantipartner == 1) : ?>
             <div class="ribbon-wrapper left is-content">
               <div class="ribbon is-content">
-                <div class="ribbon--education is-content"><?php print $ribbon_message; ?></div>
+                <div class="ribbon--education is-content"><?php print t('Garantipartner'); ?></div>
               </div>
             </div>
-          <?php else: ?>
-            <?php if (isset($field_free['0']) && $field_free['0']['value'] == 1) : ?>
-              <div class="ribbon-wrapper left is-content">
-                <div class="ribbon is-content">
-                  <div class="ribbon--education is-content"><?php print t('Free'); ?></div>
-                </div>
-              </div>
-            <?php endif;?>
           <?php endif;?>
 
           <h1 class="field--title is-education"><?php print render($title); ?></h1>
@@ -116,7 +108,6 @@
             <?php print render($content['field_activities']); ?>
             <?php print render($content['field_background_knowledge']); ?>
             <?php print render($content['field_post_work']); ?>
-            <?php print render($content['field_material_suggestions']); ?>
             <?php print render($content['field_purpose']); ?>
           </div>
 
@@ -158,7 +149,6 @@
             </div>
           <?php endif; ?>
           <?php print render($content['field_educational_material']); ?>
-          <?php print render($content['field_inspirational_material']); ?>
           <?php if ($field_last_signup_date || $field_signup_link || $field_signup_email || $field_signup_phone || $field_signup_description ) : ?>
             <div class="field--collection-wrapper">
               <div class="field--collection-label"><?php print t('Signup');?></div>
@@ -248,9 +238,8 @@
                 </div>
               <?php endif;?>
               <?php /* If any of the fields in this wrapper contain data */ ?>
-              <?php if ($field_educational_goals || $field_subjects_primary_school || $field_competencies) : ?>
+              <?php if ($field_subjects_primary_school || $field_competencies) : ?>
                 <div class="block--field-wrapper">
-                  <?php print render($content['field_educational_goals']); ?>
                   <?php print render($content['field_subjects_primary_school']); ?>
                   <?php print render($content['field_competencies']); ?>
                 </div>
