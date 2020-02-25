@@ -75,9 +75,6 @@
               </div>
             <?php endif; ?>
             <div class="block--light">
-              <h2 class="block--header">
-                <?php print t('Information');?>
-              </h2>
               <div class="block--content">
                 <?php if (isset($user_profile['field_branche'])) : ?>
                   <div class="block--field-text"><?php print render($user_profile['field_branche']); ?></div>
