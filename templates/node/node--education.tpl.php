@@ -188,7 +188,7 @@
           </div>
         </div>
         <div class="content--meta">
-          <div class="block--light">
+          <div class="block--light coral">
             <h2 class="block--header">
               <?php print t('Practical information'); ?>
             </h2>
@@ -255,7 +255,7 @@
           <?php if (module_exists('transportpulje_form') && $group_type != 'ungdomsuddannelse') : ?>
             <?php if (!empty($field_tpf_exclude)) : ?>
               <?php if ($field_tpf_exclude[LANGUAGE_NONE]['0']['value'] != 1) : ?>
-                <div class="block--dark block--transport-request-link">
+                <div class="block--dark coral block--transport-request-link">
                   <h2 class="block--header">
                     <?php print t('Transport');?>
                   </h2>
@@ -268,7 +268,7 @@
                 </div>
               <?php endif; ?>
             <?php else : ?>
-              <div class="block--dark block--transport-request-link">
+              <div class="block--dark coral block--transport-request-link">
                 <h2 class="block--header">
                   <?php print t('Transport');?>
                 </h2>
@@ -281,7 +281,7 @@
               </div>
             <?php endif; ?>
           <?php endif; ?>
-          <div class="block--dark">
+          <div class="block--dark coral">
             <h2 class="block--header">
               <?php print t('Contact provider');?>
             </h2>
@@ -308,7 +308,7 @@
             </div>
           </div>
           <?php if ($field_message_form) : ?>
-            <div class="block--light is-form">
+            <div class="block--light coral is-form">
               <div class="is-modal js-modal js-toggle-modal"></div>
               <div class="modal--wrapper js-modal-dialog">
                 <div class="modal--close js-toggle-modal"><img src="/profiles/ulf/themes/ulf_default/images/close.svg"></div>

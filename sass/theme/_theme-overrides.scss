@@ -78,6 +78,10 @@ body {
   background: $block-dark;
   color: $white;
 
+  &.coral {
+    background: $coral;
+  }
+
   a {
     @include strip-link-styles($white, underline);
   }
@@ -85,6 +89,10 @@ body {
 
 .block--light {
   @include background-set-color('blue', 0.3);
+
+  &.coral {
+    background: $light-coral;
+  }
 
   a {
     @include strip-link-styles($link-color, underline);
@@ -96,6 +104,16 @@ body {
     @extend %button;
   }
 }
+.is-internship,
+.is-education {
+  .block--pdf {
+    &-link {
+      background: $coral;
+      border: $dark-coral;
+    }
+  }
+}
+
 
 .block--newsletter.is-front .form-type-emailfield {
   & > input {
@@ -116,15 +134,21 @@ body {
       border-color: $link-color;
     }
     &.is-internship {
-      border-color: $blue;
+      border-color: $coral;
     }
     &.is-education {
-      border-color: $blue;
+      border-color: $coral;
     }
   }
 
   &--collection-label {
     color: $white;
     background: $link-color;
+  }
+}
+.is-internship,
+.is-education {
+  .field--collection-label {
+    background: $coral;
   }
 }
