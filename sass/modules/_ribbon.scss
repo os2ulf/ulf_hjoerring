@@ -14,7 +14,7 @@
 .is-internship,
 .is-education {
   .ribbon {
-    @include background-set-color('coral', 1);
+    @include background-set-color('blue', 1);
   }
 }
 .is-users {
