@@ -1,0 +1,154 @@
+/**
+ * Overrides
+ *
+ * Theme specific overrides
+ *
+ */
+
+/* Default file: base/_base.scss
+================================================================================================================== */
+body {
+  background: $coral;
+  color: $gray;
+}
+
+
+a {
+  &:link {
+    color: $link-color;
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: darken($link-color, 5%);
+  }
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: darken($link-color, 10%);
+  }
+}
+
+/* Fonts
+================================================================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+body {
+  font-family: $body-font;
+}
+
+/* Default file: modules/_footer.scss
+================================================================================================================== */
+
+.footer {
+  background: $footer-color;
+  color: $white;
+
+  // Content elements in footer is editable by editors. We set some defaults.
+  hr {
+    border-color: $white;
+  }
+
+  a {
+    @include strip-link-styles($white, underline);
+  }
+}
+
+/* Default file: modules/_header.scss
+================================================================================================================== */
+
+.header {
+  background: $coral;
+  &--logo {
+    max-width: 8em;
+  }
+}
+
+
+/* Default file: modules/_block.scss
+================================================================================================================== */
+
+.block--dark {
+  background: $block-dark;
+  color: $white;
+
+  &.coral {
+    background: $coral;
+  }
+
+  a {
+    @include strip-link-styles($white, underline);
+  }
+}
+
+.block--light {
+  @include background-set-color('blue', 0.3);
+
+  &.coral {
+    background: $light-coral;
+  }
+
+  a {
+    @include strip-link-styles($link-color, underline);
+  }
+}
+
+.block--pdf {
+  &-link {
+    @extend %button;
+  }
+}
+.is-internship,
+.is-education {
+  .block--pdf {
+    &-link {
+      background: $coral;
+      border: $dark-coral;
+    }
+  }
+}
+
+
+.block--newsletter.is-front .form-type-emailfield {
+  & > input {
+    margin-bottom: $boxlist-padding;
+  }
+}
+
+/* Default file: modules/_field.scss
+================================================================================================================== */
+.field {
+
+  /* Display of node title. */
+  &--title {
+    @include background-set-color('white', 0.7);
+    border-color: $dark-blue;
+
+    &.is-profile {
+      border-color: $link-color;
+    }
+    &.is-internship {
+      border-color: $coral;
+    }
+    &.is-education {
+      border-color: $coral;
+    }
+  }
+
+  &--collection-label {
+    color: $white;
+    background: $link-color;
+  }
+}
+.is-internship,
+.is-education {
+  .field--collection-label {
+    background: $coral;
+  }
+}

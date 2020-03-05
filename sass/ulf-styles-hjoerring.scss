@@ -6,10 +6,11 @@
 
 // Theme overrides
 @import "theme/_theme-vars";
-@import "theme/_flexbox";
 @import "patterns/_global-mixins";
-@import "patterns/_global-patterns";
 
 @import "modules/_buttons";
+@import "modules/_search";
+@import "modules/_teaser";
+@import "modules/_ribbon";
 
 @import "theme/_theme-overrides";
