@@ -88,10 +88,10 @@ body {
 }
 
 .block--light {
-  @include background-set-color('blue', 0.3);
+  background: $light-gray;
 
   &.coral {
-    background: $light-coral;
+    background: $light-gray;
   }
 
   a {
