@@ -39,6 +39,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
 }
+
 body {
   font-family: $body-font;
 }
@@ -65,6 +66,7 @@ body {
 
 .header {
   background: $coral;
+
   &--logo {
     max-width: 8em;
   }
@@ -104,6 +106,7 @@ body {
     @extend %button;
   }
 }
+
 .is-internship,
 .is-education {
   .block--pdf {
@@ -133,9 +136,11 @@ body {
     &.is-profile {
       border-color: $link-color;
     }
+
     &.is-internship {
       border-color: $coral;
     }
+
     &.is-education {
       border-color: $coral;
     }
@@ -146,9 +151,16 @@ body {
     background: $link-color;
   }
 }
+
 .is-internship,
 .is-education {
   .field--collection-label {
     background: $coral;
   }
+}
+
+
+/* Footer */
+.footer--after {
+  background: none;
 }
