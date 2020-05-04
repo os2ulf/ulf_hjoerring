@@ -100,7 +100,10 @@
                 <?php if (isset($user_profile['field_profile_phone'])) : ?>
                   <div class="block--field-text"><?php print t('Phone')?> <?php print render($user_profile['field_profile_phone']); ?></div>
                 <?php endif;?>
-                <div class="block--field-text"><?php print render($user_profile['field_profile_mail']); ?></div>
+
+                <?php if(!in_array('company', $elements['#account']->roles )) : ?>
+                  <div class="block--field-text"><?php print render($user_profile['field_profile_mail']); ?></div>
+                <?php endif ?>
                 <div class="block--field-text"><?php print render($user_profile['field_profile_home_page']); ?></div>
               </div>
             </div>          </div>

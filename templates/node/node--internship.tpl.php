@@ -229,6 +229,11 @@
                   <?php print render($content['field_facilities_info']); ?>
                 </div>
               <?php endif; ?>
+              <?php if ($field_educational_path) : ?>
+                <div class="block--field-wrapper">
+                  <?php print render($content['field_educational_path']); ?>
+                </div>
+              <?php endif; ?>
             </div>
           </div>
           <div class="block--dark coral">
