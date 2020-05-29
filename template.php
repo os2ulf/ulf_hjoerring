@@ -11,3 +11,11 @@ function ulf_hjoerring_preprocess_user_profile(&$variables) {
     = views_embed_view('hjoerring_content_by_user', 'block_3');
 
 }
+
+function ulf_hjoerring_preprocess_page(&$variables) {
+  if ($variables['theme_hook_suggestions'][0] === 'page__nyheder') {
+    $blockObject = block_load('mailchimp_signup', 'signup_to_newsletter');
+    $block = _block_get_renderable_array(_block_render_blocks([$blockObject]));
+    $variables['newsletter_subscription_form'] = $block;
+  }
+}
