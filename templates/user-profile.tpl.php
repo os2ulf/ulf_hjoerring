@@ -125,4 +125,5 @@
 </div>
 <?php hide($user_profile['summary']); ?>
 <?php hide($user_profile['mimemail']); ?>
+<?php hide($user_profile['field_profile_mail']); ?>
 <?php print render($user_profile); ?>

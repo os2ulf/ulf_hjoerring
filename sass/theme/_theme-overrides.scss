@@ -164,4 +164,15 @@ body {
   background: none;
 }
 
+/* Default file: modules/_paragraphs.scss
+================================================================================================================== */
+
+.entity-paragraphs-item {
+  .btn {
+    @extend %button;
+    @include strip-link-styles($white);
+  }
+}
+
+
 
