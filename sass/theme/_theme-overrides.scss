@@ -174,5 +174,29 @@ body {
   }
 }
 
+.page-nyheder {
+  .block--newsletter {
+    &-inner {
+      margin: 0 0 1em 0;
+    }
 
+    .form-item {
+      padding: 1em 0 0 0;
 
+      &:first-child {
+        padding: 0;
+      }
+
+      label {
+        margin-bottom: 0.75em;
+        display: block;
+      }
+    }
+  }
+
+  .mailchimp-signup-subscribe-form {
+    padding: 0 1em;
+    box-sizing: border-box;
+
+  }
+}
