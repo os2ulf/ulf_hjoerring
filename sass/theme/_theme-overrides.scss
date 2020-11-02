@@ -101,22 +101,24 @@ body {
   }
 }
 
-.block--pdf {
+.block--pdf,
+.block--signup {
   &-link {
     @extend %button;
+    @include strip-link-styles($white);
   }
 }
 
 .is-internship,
 .is-education {
-  .block--pdf {
+  .block--pdf,
+  .block--signup {
     &-link {
       background: $coral;
       border: $dark-coral;
     }
   }
 }
-
 
 .block--newsletter.is-front .form-type-emailfield {
   & > input {
@@ -127,7 +129,6 @@ body {
 /* Default file: modules/_field.scss
 ================================================================================================================== */
 .field {
-
   /* Display of node title. */
   &--title {
     @include background-set-color('white', 0.7);
