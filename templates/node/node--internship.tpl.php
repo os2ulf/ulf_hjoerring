@@ -161,6 +161,10 @@
                       <?php print render($content['field_signup_email']); ?>
                       <?php print render($content['field_signup_phone']); ?>
                       <?php print render($content['field_last_signup_date']); ?>
+
+                      <?php if ($field_signup_show_link[LANGUAGE_NONE][0]['value'] === '1'): ?>
+                          <?php print l('How to apply for an internship', '/s%C3%A5dan-s%C3%B8ger-du-erhvervspraktik', ['attributes' => ['class' => 'block--signup-link']]) ?>
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>
@@ -267,6 +271,7 @@
               </p>
             </div>
           </div>
+
           <?php if ($field_message_form) : ?>
             <div class="block--light coral is-form">
             <div class="is-modal js-modal js-toggle-modal"></div>
