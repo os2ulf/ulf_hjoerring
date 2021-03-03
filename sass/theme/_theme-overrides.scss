@@ -201,3 +201,221 @@ body {
 
   }
 }
+
+a:focus {
+  outline: none;
+}
+
+.header {
+  z-index: 100;
+}
+.header--inner {
+
+  #menu-trigger {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: top .3s ease;
+    display: block;
+    @include breakpoint(1000px) {
+      display: none;
+    }
+    span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #fff;
+      position: absolute;
+      top: 21px;
+      left: 15px;
+      transition: all .3s ease;
+
+      &:nth-child(2){
+        top: 28px;
+      }
+
+      &:nth-child(3){
+        top: 35px;
+      }
+    }
+  }
+}
+.header--nav-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  transform: translateY(-50%);
+  display: none;
+  @include breakpoint(1000px) {
+    display: block;
+  }
+}
+html.mm-opened{
+  #menu-trigger{
+    span{
+      &:nth-child(1){
+        top: 28px;
+        transform: rotate(-45deg);
+      }
+      &:nth-child(2){
+        top: 28px;
+        opacity: 0;
+      }
+      &:nth-child(3){
+        top: 28px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+.mm-menu {
+  background: #002c40;
+  .nav--list-dropdown-item.expanded,
+  .nav--list-item.expanded {
+    padding-right: 0;
+    &:after {
+      background: none;
+    }
+  }
+  .nav--list-item-sub {
+    border-bottom: 0;
+    &:hover {
+      background-color: #666;
+    }
+    a {
+      color: #fff;
+      &:hover {
+        background: none;
+      }
+    }
+  }
+  .mm-subtitle,
+  a.mm-subclose {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .nav--sub {
+    border: none;
+  }
+}
+@include breakpoint(1000px) {
+  .nav .nav--static-pages {
+    min-width: 190px;
+  }
+  .nav--sub {
+    right: auto;
+    left: 0;
+  }
+}
+.header--logo {
+  display: block;
+  left: 20px;
+  img {
+    width: 60px;
+    height: auto;
+  }
+  @include breakpoint(720px) {
+    img {
+      width: auto;
+    }
+  }
+  @include breakpoint(1000px) {
+    display: none;
+  }
+}
+.nav {
+  background: none;
+  display: block;
+  .nav--inner {
+    text-align: center;
+    a.logo {
+      position: relative;
+      margin: -36px 0;
+      display: block;
+      width: 112px;
+      height: 112px;
+      text-indent: -9999px;
+      background-image: url(/sites/ungegarantien.dk/themes/ulf_hjoerring/logo.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .nav--list-item {
+      vertical-align: middle;
+
+      .nav--sub {
+        background: none;
+        border: none;
+      }
+
+      ul {
+        background: $coral;
+        box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.5);
+        padding: 10px 0;
+        li {
+          padding: 0;
+          text-align: left;
+          a {
+            padding: 10px 15px;
+            color: #fff;
+            &:hover {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      &.active-trail,
+      &:hover {
+        background-color: transparent;
+
+        ul {
+          visibility: visible;
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+    .nav--list-item-sub {
+      border-bottom: 0 solid #d9d9d9;
+      margin: 0;
+    }
+  }
+}
+.search--filters {
+  &.sticky {
+    position: relative;
+    top: auto;
+    @include breakpoint(720px) {
+      position: fixed;
+      top: 0;
+    }
+  }
+}
+
+.page-erhvervspraktik,
+.page-udbydere,
+.page-nyheder,
+ .page-uddannelse-og-job {
+
+  .page--wrapper {
+    background: #DBDAD0;
+    .pagination a:link, .pagination a:visited, .pagination a:focus, .pagination span {
+      background-color: $coral;
+      color: #fff;
+    }
+    .pagination a:hover,
+    .pagination .pager .pager-current, .pagination .pager .active, .pagination .pager-current, .pagination .active {
+      background-color: $dark-coral;
+      a, span {
+        background-color: $dark-coral;
+      }
+    }
+  }
+}

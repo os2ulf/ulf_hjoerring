@@ -72,6 +72,7 @@
  * @ingroup themeable
  */
 ?>
+<div id="mobile-menu"></div>
 <a class="nav--overlay js-toggle-mobile-nav js-overlay"></a>
 <div class="page--wrapper js-page-wrapper">
   <div class="page--inner">
@@ -122,9 +123,6 @@
           <div class="tabs">
             <?php print render($tabs); ?>
           </div>
-        <?php endif; ?>
-        <?php if ($newsletter_subscription_form): ?>
-          <?php print render($newsletter_subscription_form); ?>
         <?php endif; ?>
         <?php print render($page['content']); ?>
       </div>
