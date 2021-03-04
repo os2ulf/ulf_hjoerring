@@ -33,7 +33,7 @@ jQuery(function($){
         var searchBoxWidth = $("#searchBoxApp").parent().width();
         var searchBoxHeight = $("#searchBoxApp").height();
         var scroll = $(window).scrollTop();
-        if (scroll >= searchBoxOffset.top) {
+        if (scroll >= searchBoxOffset.top && window.innerWidth >= 720) {
           $("#searchBoxApp").addClass('sticky').css('left', searchBoxOffset.left).css('width', searchBoxWidth);
           $("#searchBoxApp").parent().css('padding-top', searchBoxHeight);
         } else {
@@ -47,7 +47,7 @@ jQuery(function($){
         var searchBoxOffset = $("#searchBoxApp").parent().offset();
         var searchBoxWidth = $("#searchBoxApp").parent().width();
         var searchBoxHeight = $("#searchBoxApp").height();
-        if ($("#searchBoxApp").hasClass('sticky')) {
+        if ($("#searchBoxApp").hasClass('sticky') && window.innerWidth >= 720) {
           $("#searchBoxApp").addClass('sticky').css('left', searchBoxOffset.left).css('width', searchBoxWidth);
           $("#searchBoxApp").parent().css('padding-top', searchBoxHeight);
         } else {
