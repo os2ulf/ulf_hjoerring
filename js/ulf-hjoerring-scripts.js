@@ -31,11 +31,14 @@ jQuery(function($){
       if ($('#searchBoxApp').length > 0) {
         var searchBoxOffset = $("#searchBoxApp").parent().offset();
         var searchBoxWidth = $("#searchBoxApp").parent().width();
+        var searchBoxHeight = $("#searchBoxApp").height();
         var scroll = $(window).scrollTop();
         if (scroll >= searchBoxOffset.top) {
           $("#searchBoxApp").addClass('sticky').css('left', searchBoxOffset.left).css('width', searchBoxWidth);
+          $("#searchBoxApp").parent().css('padding-top', searchBoxHeight);
         } else {
           $("#searchBoxApp").removeClass('sticky').css('left', 'auto').css('width', 'auto');
+          $("#searchBoxApp").parent().css('padding-top', 0);
         }
       }
     });
@@ -43,10 +46,13 @@ jQuery(function($){
       if ($('#searchBoxApp').length > 0) {
         var searchBoxOffset = $("#searchBoxApp").parent().offset();
         var searchBoxWidth = $("#searchBoxApp").parent().width();
+        var searchBoxHeight = $("#searchBoxApp").height();
         if ($("#searchBoxApp").hasClass('sticky')) {
           $("#searchBoxApp").addClass('sticky').css('left', searchBoxOffset.left).css('width', searchBoxWidth);
+          $("#searchBoxApp").parent().css('padding-top', searchBoxHeight);
         } else {
           $("#searchBoxApp").removeClass('sticky').css('left', 'auto').css('width', 'auto');
+          $("#searchBoxApp").parent().css('padding-top', 0);
         }
       }
     }); // END window load

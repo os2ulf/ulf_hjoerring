@@ -397,8 +397,13 @@ html.mm-opened{
       top: 0;
     }
   }
+  .search--widget {
+    margin-bottom: 0;
+  }
 }
-
+.search--results {
+  padding-top: 16px;
+}
 .page-erhvervspraktik,
 .page-udbydere,
 .page-nyheder,
