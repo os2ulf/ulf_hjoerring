@@ -312,6 +312,11 @@ html.mm-opened{
   .nav--sub {
     right: auto;
     left: 0;
+
+    .nav--sub {
+      top: 5px;
+      left: 95%;
+    }
   }
 }
 .header--logo {
@@ -362,6 +367,7 @@ html.mm-opened{
         li {
           padding: 0;
           text-align: left;
+          position: relative;
           a {
             padding: 10px 15px;
             color: #fff;
