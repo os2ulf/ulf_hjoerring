@@ -247,8 +247,8 @@ a:focus {
 .header--nav-wrapper {
   position: absolute;
   top: 50%;
-  left: 0;
-  width: 100%;
+  left: 130px;
+  right: 0;
   height: 40px;
   transform: translateY(-50%);
   display: none;
@@ -332,28 +332,22 @@ html.mm-opened{
     }
   }
   @include breakpoint(1000px) {
-    display: none;
+    left: 0;
   }
 }
 .nav {
   background: none;
   display: block;
   .nav--inner {
-    text-align: center;
-    a.logo {
-      position: relative;
-      margin: -36px 0;
-      display: block;
-      width: 112px;
-      height: 112px;
-      text-indent: -9999px;
-      background-image: url(/sites/ungegarantien.dk/themes/ulf_hjoerring/logo.png);
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
+
     .nav--list-item {
       vertical-align: middle;
+
+      &.expanded {
+        > a {
+          padding-right: 5px;
+        }
+      }
 
       .nav--sub {
         background: none;
@@ -363,13 +357,13 @@ html.mm-opened{
       ul {
         background: $coral;
         box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.5);
-        padding: 10px 0;
+        padding: 5px 0;
         li {
           padding: 0;
           text-align: left;
           position: relative;
           a {
-            padding: 10px 15px;
+            padding: 12px 15px;
             color: #fff;
             &:hover {
               background-color: transparent;
@@ -391,6 +385,20 @@ html.mm-opened{
     .nav--list-item-sub {
       border-bottom: 0 solid #d9d9d9;
       margin: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        height: 1px;
+        background: rgba(255,255,255,0.5);
+      }
+
+      &.last::after {
+        display: none;
+      }
     }
   }
 }
