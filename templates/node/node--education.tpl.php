@@ -105,10 +105,10 @@
           <?php print render($content['field_full_description']); ?>
 
           <div class="course-activity">
-            <?php print render($content['field_activities']); ?>
-            <?php print render($content['field_background_knowledge']); ?>
-            <?php print render($content['field_post_work']); ?>
             <?php print render($content['field_purpose']); ?>
+            <?php print render($content['field_background_knowledge']); ?>
+            <?php print render($content['field_activities']); ?>
+            <?php print render($content['field_post_work']); ?>
           </div>
 
           <?php print render($content['field_video']); ?>
