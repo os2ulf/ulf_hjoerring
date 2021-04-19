@@ -47,6 +47,16 @@
           <div class="content--main">
             <h2 class="block--field-label"><?php print t('Presentation');?></h2>
             <?php print render($user_profile['field_profile_description']); ?>
+            <?php if (module_exists('ulf_world_targets') && isset($world_targets)) : ?>
+              <div class="block--field-wrapper">
+                <?php print $world_targets; ?>
+                <?php if (isset($user_profile['field_world_targets_description']['#object']->field_world_targets_description['und'])) : ?>
+                  <div class="world-targets-description">
+                    <?php print $user_profile['field_world_targets_description']['#object']->field_world_targets_description['und'][0]['value']; ?>
+                  </div>
+                <?php endif; ?>
+              </div>
+            <?php endif;?>
             <?php if (isset($user_profile['field_profile_educat_profi'])) : ?>
               <h2 class="block--field-label"><?php print t('Educational profile');?></h2>
               <?php print render($user_profile['field_profile_educat_profi']); ?>
