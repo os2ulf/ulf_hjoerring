@@ -50,9 +50,9 @@
             <?php if (module_exists('ulf_world_targets') && isset($world_targets)) : ?>
               <div class="block--field-wrapper">
                 <?php print $world_targets; ?>
-                <?php if (isset($user_profile['field_world_targets_description']['#object']->field_world_targets_description['und'])) : ?>
+                <?php if (isset($user_profile['field_world_targets_description'])) : ?>
                   <div class="world-targets-description">
-                    <?php print $user_profile['field_world_targets_description']['#object']->field_world_targets_description['und'][0]['value']; ?>
+                    <?php print render($user_profile['field_world_targets_description']); ?>
                   </div>
                 <?php endif; ?>
               </div>
