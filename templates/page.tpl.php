@@ -140,3 +140,25 @@
     </footer>
   </div>
 </div>
+
+<script type="text/javascript">
+  window._monsido = window._monsido || {
+    token: "NN_ljGpVJkDchQzMf2b9Wg",
+    statistics: {
+      enabled: true,
+      documentTracking: {
+        enabled: true,
+        documentCls: "monsido_download",
+        documentIgnoreCls: "monsido_ignore_download",
+        documentExt: [],
+      },
+    },
+    heatmap: {
+      enabled: true,
+    },
+    pageCorrect: {
+      enabled: true,
+    },
+  };
+</script>
+<script type="text/javascript" async src="https://app-script.monsido.com/v2/monsido-script.js"></script>
