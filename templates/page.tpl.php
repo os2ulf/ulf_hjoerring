@@ -162,3 +162,11 @@
   };
 </script>
 <script type="text/javascript" async src="https://app-script.monsido.com/v2/monsido-script.js"></script>
+<script type="text/javascript">
+  window._monsido = _monsido || [];
+  _monsido.push(['_setDomainToken', 'NN_ljGpVJkDchQzMf2b9Wg']);
+  _monsido.push(['_withStatistics', 'true']);
+</script>
+<script async src="//cdn.monsido.com/tool/javascripts/monsido.js"></script>
+<script async type="text/javascript" src="//pagecorrect.monsido.com/v1/page-correct.js"></script>
+<script async type="text/javascript" src="//heatmaps.monsido.com/v1/heatmaps.js"></script>
