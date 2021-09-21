@@ -341,9 +341,11 @@
       hide($content['field_free']);
       hide($content['field_period_full_year']);
       hide($content['field_pretix_date']);
-      hide($content['comments']);
+//      hide($content['comments']);
       hide($content['links']); ?>
-      <div style=""><?php print render($content); ?></div>
+      <div class="content">
+        <?php print render($content); ?>
+      </div>
     </div>
   </div>
 </div>
