@@ -19,3 +19,11 @@ function ulf_hjoerring_preprocess_page(&$variables) {
     $variables['newsletter_subscription_form'] = $block;
   }
 }
+
+
+/**
+* Implements template_preprocess_comment().
+*/
+function ulf_hjoerring_preprocess_comment(&$variables) {
+  unset($variables['content']['links']['comment']['#links']['comment-reply']);
+}
