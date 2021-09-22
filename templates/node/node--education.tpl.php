@@ -250,6 +250,11 @@
                   <?php print render($content['field_facilities_info']); ?>
                 </div>
               <?php endif; ?>
+              <?php if ($node->field_fivestar_rating['und'][0]['count'] > 0): ?>
+                <div class="block--field-wrapper education-rating">
+                  <?php print render($content['field_fivestar_rating']); ?>
+                </div>
+              <?php endif; ?>
             </div>
             <?php if (module_exists('ulf_world_targets') && isset($world_targets)) : ?>
               <div class="block--field-wrapper">
@@ -341,6 +346,7 @@
       hide($content['field_free']);
       hide($content['field_period_full_year']);
       hide($content['field_pretix_date']);
+      hide($content['field_fivestar_rating']);
 //      hide($content['comments']);
       hide($content['links']); ?>
       <div class="content">
