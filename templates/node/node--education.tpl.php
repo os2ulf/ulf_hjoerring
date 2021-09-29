@@ -186,6 +186,7 @@
           <div class="block--pdf">
             <a class="block--pdf-link" target="_blank" href="/printpdf/<?php print $node->nid; ?>"><?php print t('Save this offer as pdf'); ?></a>
           </div>
+          <?php print render($content['comments']); ?>
         </div>
         <div class="content--meta">
           <div class="block--light coral">
@@ -347,11 +348,8 @@
       hide($content['field_period_full_year']);
       hide($content['field_pretix_date']);
       hide($content['field_fivestar_rating']);
-//      hide($content['comments']);
+      hide($content['comments']);
       hide($content['links']); ?>
-      <div class="content">
-        <?php print render($content); ?>
-      </div>
     </div>
   </div>
 </div>

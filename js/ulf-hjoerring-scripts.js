@@ -21,6 +21,17 @@ jQuery(function($){
     $("#menu-trigger").click(function() {
 			 $("#mobile-menu").trigger("open.mm");
 		});
+    $('.comment-form--trigger').click(function() {
+      if ($('.comment-form').hasClass('expanded')) {
+        $('.comment-form').removeClass('expanded');
+        $(this).find('.inactive').show();
+        $(this).find('.active').hide();
+      } else {
+        $('.comment-form').addClass('expanded');
+        $(this).find('.inactive').hide();
+        $(this).find('.active').show();
+      }
+    });
 
   }); // END document ready
 

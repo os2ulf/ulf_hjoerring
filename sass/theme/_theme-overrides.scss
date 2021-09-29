@@ -438,6 +438,41 @@ html.mm-opened{
     }
   }
 }
+
 .search-results--result {
   background: #fff;
+}
+
+.content--main .comment-wrapper h2:not(.block--field-label) {
+  &.field--title {
+    position: relative;
+    padding-bottom: 5px;
+    font-size: 2em;
+  }
+}
+
+#comments {
+  margin-top: 0;
+}
+
+.comment-wrapper {
+  padding: 30px 0;
+}
+
+html.js {
+  .comment-form--trigger {
+    span.active {
+      display: none;
+    }
+  }
+
+  .comment-form {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+
+    &.expanded {
+      max-height: 2000px;
+    }
+  }
 }
