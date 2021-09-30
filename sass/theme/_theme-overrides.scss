@@ -443,24 +443,30 @@ html.mm-opened{
   background: #fff;
 }
 
-.content--main .comment-wrapper h2:not(.block--field-label) {
-  &.field--title {
-    position: relative;
-    padding-bottom: 5px;
-    font-size: 2em;
-  }
-}
-
 #comments {
   margin-top: 0;
 }
 
 .comment-wrapper {
   padding: 30px 0;
+
+  .field--collection-label {
+    background: $coral;
+  }
 }
 
 html.js {
   .comment-form--trigger {
+    background: #fff;
+    color: $coral;
+    border-color: $coral;
+    border-radius: 0;
+
+    &:hover {
+      background: $coral;
+      color: #fff;
+    }
+
     span.active {
       display: none;
     }

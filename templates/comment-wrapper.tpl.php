@@ -37,7 +37,7 @@
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if ($content['comments'] && $node->type != 'forum'): ?>
     <?php print render($title_prefix); ?>
-    <h2 class="title field--title is-education">Anmeldelser</h2>
+    <div class="title field--collection-label">Anmeldelser</div>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
 
