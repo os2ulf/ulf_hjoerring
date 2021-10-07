@@ -123,9 +123,6 @@
             <?php print render($tabs); ?>
           </div>
         <?php endif; ?>
-        <?php if ($newsletter_subscription_form): ?>
-          <?php print render($newsletter_subscription_form); ?>
-        <?php endif; ?>
         <?php print render($page['content']); ?>
       </div>
     <?php endif; ?>

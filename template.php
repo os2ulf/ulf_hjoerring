@@ -20,6 +20,18 @@ function ulf_hjoerring_preprocess_page(&$variables) {
   }
 }
 
+function ulf_hjoerring_preprocess_node(&$variables) {
+  $path = current_path();
+  $path_alias = drupal_lookup_path('alias',$path);
+
+  if ($path_alias == 'nyhedsbrev') {
+    $blockObject = block_load('mailchimp_signup', 'signup_to_newsletter');
+    $block = _block_get_renderable_array(_block_render_blocks([$blockObject]));
+    $variables['newsletter_subscription_form'] = $block;
+    $variables['theme_hook_suggestions'][]='node__nyhedsbrev';
+  }
+}
+
 
 /**
 * Implements template_preprocess_comment().

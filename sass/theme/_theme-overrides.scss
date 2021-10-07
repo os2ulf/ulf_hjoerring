@@ -482,3 +482,31 @@ html.js {
     }
   }
 }
+
+.newsletter-node {
+  .content--main {
+    width: 100%;
+
+    .block--newsletter-inner {
+      border: none;
+
+      .block--newsletter-header {
+        padding: 0;
+        margin-bottom: 15px;
+      }
+
+      .mailchimp-signup-subscribe-form .mailchimp-newsletter-mergefields {
+        padding-bottom: 5px;
+      }
+
+      .form-item {
+        margin-bottom: 10px;
+
+        label {
+          margin-bottom: 5px;
+          display: block;
+        }
+      }
+    }
+  }
+}
