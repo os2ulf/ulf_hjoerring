@@ -28,8 +28,8 @@ body {
     background: white;
     width: 700px;
     color: #3f3f3f;
-    font-family: sans-serif;
-    font-size: 14px;
+    font-family: 'Muli', sans-serif;
+    font-size: 11pt;
     box-shadow: none;
     text-shadow: none;
     position: relative;
@@ -47,6 +47,11 @@ body {
 
 h2 {
     font-size: 1.2em;
+    margin: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 12pt;
     margin: 0 0 10px 0;
 }
 

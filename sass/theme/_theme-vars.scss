@@ -12,7 +12,7 @@ $white:            #fff;
 $black:            #000;
 
 $gray:             lighten($black, 20%);
-$light-gray: #e6e6e6;
+$light-gray:       #e6e6e6;
 
 $coral:            #f1564d;
 $blue:             #5d97d1;
@@ -30,9 +30,8 @@ $link-color-hover: darken($link-color, 10%);
 /* Typography
    ================================================================================================================== */
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 $header-font: "Muli", sans-serif;
-$body-font: 'Lato', sans-serif;
+$body-font: 'Muli', sans-serif;
 $font: $body-font;
 
 
