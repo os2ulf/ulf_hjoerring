@@ -8,10 +8,96 @@
 /* Default file: base/_base.scss
 ================================================================================================================== */
 body {
-  background: $coral;
-  color: $gray;
+  background: $white;
+  color: $black;
 }
 
+.page--wrapper {
+  .header {
+    position: relative;
+    background: none;
+    background-color: $white;
+    height: 160px;
+
+    &--inner {
+      @include breakpoint(45em) {
+        text-align: center;
+      }
+    }
+
+    &--logo {
+      position: relative;
+
+      img {
+        width: 125px;
+        @include breakpoint(45em) {
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  background: $white;
+  text-align: center;
+  padding: 15px 0 50px;
+
+  &--list-dropdown-link,
+  &--list-link {
+    @extend %nav--list-link;
+
+    &:hover {
+      background-color: $dark-blue;
+
+      @include breakpoint(1000px) {
+        background-color: $page;
+      }
+    }
+  }
+
+  &--list-dropdown-item,
+  &--list-item {
+    &:hover {
+      background-color: $dark-blue;
+
+      @include breakpoint(1000px) {
+        background-color: $page;
+      }
+    }
+
+    &.expanded {
+      padding-right: 35px;
+
+      // Add dropdown arrow
+      &:after {
+        right: 15px;
+        background-image: url("/profiles/ulf/themes/ulf_default/images/arrow.svg");
+      }
+
+      .nav--list-link {
+        padding-right: 5px;
+      }
+    }
+  }
+
+  &--sub {
+    border: 1px solid $gray-lighter;
+  }
+}
+
+%nav--list-link {
+  display: block;
+  font-weight: normal;
+  line-height: 40px;
+  padding: 0 $spacing;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-size: 18px;
+
+  @include breakpoint(55em) {
+    @include strip-link-styles($coral);
+  }
+}
 
 a {
   &:link {
@@ -48,8 +134,8 @@ body {
 ================================================================================================================== */
 
 .footer {
-  background: $footer-color;
-  color: $white;
+  background: #dbdad0;
+  color: $black;
 
   // Content elements in footer is editable by editors. We set some defaults.
   hr {
@@ -57,7 +143,7 @@ body {
   }
 
   a {
-    @include strip-link-styles($white, underline);
+    @include strip-link-styles($coral, underline);
   }
 }
 
@@ -65,10 +151,13 @@ body {
 ================================================================================================================== */
 
 .header {
-  background: $coral;
+  position: relative;
+  background: none;
+  background-color: #fff;
+  height: 160px;
 
   &--logo {
-    max-width: 8em;
+    max-width: 125px;
   }
 }
 
@@ -228,7 +317,7 @@ a:focus {
       display: block;
       width: 30px;
       height: 3px;
-      background: #fff;
+      background: $coral;
       position: absolute;
       top: 21px;
       left: 15px;
@@ -284,12 +373,11 @@ html.mm-opened{
     }
   }
   .nav--list-item-sub {
-    border-bottom: 0;
-    &:hover {
-      background-color: #666;
-    }
+    margin: 0 1em;
+    border-bottom: 1px solid #d9d9d9;
+
     a {
-      color: #fff;
+      color: $coral;
       &:hover {
         background: none;
       }
@@ -321,23 +409,22 @@ html.mm-opened{
 }
 .header--logo {
   display: block;
-  left: 20px;
+  margin: 0 auto;
+
   img {
-    width: 60px;
+    width: 125px;
     height: auto;
   }
-  @include breakpoint(720px) {
-    img {
-      width: auto;
-    }
-  }
   @include breakpoint(1000px) {
-    left: 0;
   }
 }
 .nav {
-  background: none;
-  display: block;
+  display: none;
+
+  @include breakpoint(1000px) {
+    display: block;
+  }
+
   .nav--inner {
 
     .nav--list-item {
@@ -355,7 +442,7 @@ html.mm-opened{
       }
 
       ul {
-        background: $coral;
+        background: #fff;
         box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.5);
         padding: 5px 0;
         li {
@@ -364,7 +451,7 @@ html.mm-opened{
           position: relative;
           a {
             padding: 12px 15px;
-            color: #fff;
+            color: $coral;
             &:hover {
               background-color: transparent;
             }
@@ -373,7 +460,11 @@ html.mm-opened{
       }
       &.active-trail,
       &:hover {
-        background-color: transparent;
+        background-color: $block-dark;
+
+        @include breakpoint(1000px) {
+          background-color: #f5f5f5;
+        }
 
         ul {
           visibility: visible;
@@ -383,19 +474,6 @@ html.mm-opened{
       }
     }
     .nav--list-item-sub {
-      border-bottom: 0 solid #d9d9d9;
-      margin: 0;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 10px;
-        right: 10px;
-        height: 1px;
-        background: #002C40;
-      }
-
       &.last::after {
         display: none;
       }
@@ -424,7 +502,8 @@ html.mm-opened{
  .page-uddannelse-og-job {
 
   .page--wrapper {
-    background: #DBDAD0;
+    background: #f5f5f5;
+
     .pagination a:link, .pagination a:visited, .pagination a:focus, .pagination span {
       background-color: $coral;
       color: #fff;

@@ -86,22 +86,20 @@
         <div id="menu-trigger">
           <span></span><span></span><span></span>
         </div>
-        <div class="header--nav-wrapper">
-          <nav class="nav">
-            <ul class="nav--inner">
-              <?php if ($main_menu) : ?>
-                <?php print render($main_menu_block['content']); ?>
-              <?php endif; ?>
-            </ul>
-          </nav>
-          <?php if (!empty($social_media_links)) : ?>
-            <div class="social-media--header-wrapper">
-              <?php print render($social_media_links['content']); ?>
-            </div>
-          <?php endif; ?>
-        </div>
       </div>
     </header>
+    <nav class="nav">
+      <ul class="nav--inner">
+        <?php if ($main_menu) : ?>
+          <?php print render($main_menu_block['content']); ?>
+        <?php endif; ?>
+        <?php if (!empty($social_media_links)) : ?>
+          <li class="social-media--header-wrapper">
+            <?php print render($social_media_links['content']); ?>
+          </li>
+        <?php endif; ?>
+      </ul>
+    </nav>
 
     <div class="page--messages">
       <?php print $messages; ?>

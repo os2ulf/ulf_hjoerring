@@ -11,8 +11,16 @@
 $white:            #fff;
 $black:            #000;
 
+$white-off:        lighten($black, 95%);
+$gray-lightest:    lighten($black, 90%);
+$gray-lighter:     lighten($black, 85%);
+$gray-light:       lighten($black, 70%);
+$gray-dark:        lighten($black, 50%);
+$gray-darker:      lighten($black, 40%);
+$gray-darkest:     lighten($black, 30%);
 $gray:             lighten($black, 20%);
 $light-gray:       #e6e6e6;
+
 
 $coral:            #f1564d;
 $blue:             #5d97d1;
@@ -20,7 +28,9 @@ $light-blue:       #cae1f7;
 $light-coral:      #fee6e4;
 $dark-coral:       #bf0d03;
 $dark-blue:        #2c649c;
-$footer-color:     $coral;
+$footer-color:     #dbdad0;
+$page:             rgb(245,245,245);
+$footer:           rgb(229,229,229);
 $block-dark:       $blue;
 $block-light:      $light-blue;
 $link-color:       $blue;
@@ -40,3 +50,11 @@ $font: $body-font;
 $boxlist-font-color:    $gray;
 $boxlist-border-color:  $blue;
 $boxlist-padding:       1em;
+
+
+/* Spacing
+   ================================================================================================================== */
+
+$spacing:          16px;
+
+
