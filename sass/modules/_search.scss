@@ -63,6 +63,20 @@
       }
     }
 
+    &.is-internship {
+      .search--filter-wrapper {
+        @include breakpoint(1000px) {
+          width: 50%;
+          padding-right: 0;
+
+          &:nth-child(1),
+          &:nth-child(3) {
+            padding-right: 2px;
+          }
+        }
+      }
+    }
+
     .hidden {
       display: none;
     }
